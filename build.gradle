@@ -9,10 +9,10 @@ plugins {
     id'com.github.johnrengelman.shadow' version '5.2.0'
 }
 
-mainClassName = 'com.example.jda.Bot' // 
+mainClassName = 'com.example.jda.RanchBot' // 
 
 version '1.0'
-def jdaVersion = '' // 
+group ''
 
 sourceCompatibility = targetCompatibility = 1.8
 
@@ -21,7 +21,11 @@ repositories {
 }
 
 dependencies {
-    implementation("net.dv8tion:JDA:$jdaVersion")
+    implementation("net.dv8tion:JDA:5.0.0-beta.2")
 }
 
 compileJava.options.encoding = 'UTF-8'
+
+tasks.jar {
+    manifest.attributes["Main-Class"] = "me.tpc.ranch.bot.Bot";
+}
