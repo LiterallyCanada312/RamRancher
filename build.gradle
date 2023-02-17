@@ -4,3 +4,24 @@
  * This is a general purpose Gradle build.
  * Learn more about Gradle by exploring our samples at https://docs.gradle.org/8.0/samples
  */
+plugins {
+    id'application'
+    id'com.github.johnrengelman.shadow' version '5.2.0'
+}
+
+mainClassName = 'com.example.jda.Bot' // 
+
+version '1.0'
+def jdaVersion = '' // 
+
+sourceCompatibility = targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("net.dv8tion:JDA:$jdaVersion")
+}
+
+compileJava.options.encoding = 'UTF-8'
