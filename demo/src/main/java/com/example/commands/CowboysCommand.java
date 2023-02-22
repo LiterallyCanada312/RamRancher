@@ -38,10 +38,13 @@ public class CowboysCommand extends ListenerAdapter{
     }
 
     public void onSlashCommandInteraction(SlashCommandInteraction ctx){
-        
+
+        int randomIndex = (int) (Math.random()*(Constants.links.length));
+
         if(ctx.getName().equals("cowboys")){
-            ctx.reply(ctx.getOption("HOT").getAsString()).queue();
+            ctx.reply(Constants.links[randomIndex]).queue();
         }
+        
     }
 
 }

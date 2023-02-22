@@ -5,7 +5,9 @@ public class Constants {
 
     public static final String[] links = {
 
-
+        "https://i.imgur.com/Ckec4Ad.mp4",
+        "https://i.imgur.com/j4ghVpD.jpeg",
+        "https://i.imgur.com/0mlP73I.jpeg"
 
 
     };
