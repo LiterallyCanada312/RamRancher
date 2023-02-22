@@ -13,9 +13,10 @@ import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.DefaultMemberPermissions;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.api.interactions.commands.SlashCommandInteraction;
 
 
-public class Cowboys extends ListenerAdapter{
+public class CowboysCommand extends ListenerAdapter{
     
     public static void main(String[] args)
     {
@@ -34,6 +35,13 @@ public class Cowboys extends ListenerAdapter{
             Commands.slash("Cowboys", "Send a random gif of hot hard buff cowboys")
                     .setGuildOnly(true) 
         ).queue();
+    }
+
+    public void onSlashCommandInteraction(SlashCommandInteraction ctx){
+        
+        if(ctx.getName().equals("cowboys")){
+            ctx.reply(ctx.getOption("HOT").getAsString()).queue();
+        }
     }
 
 }
