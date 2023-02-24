@@ -2,6 +2,7 @@ package com.example;
 
 import javax.security.auth.login.LoginException;
 
+import com.example.commands.CowboysCommand;
 import com.example.resources.Constants;
 
 import net.dv8tion.jda.api.JDABuilder;
@@ -14,6 +15,7 @@ public class RamRanchBot
 
         JDA bot = JDABuilder.createDefault(Constants.token)
         .setActivity(Activity.playing("JEQLING"))
+        .addEventListeners(new CowboysCommand())
         .build();
 
     }

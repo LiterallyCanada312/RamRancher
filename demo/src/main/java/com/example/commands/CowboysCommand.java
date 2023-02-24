@@ -3,16 +3,12 @@ package com.example.commands;
 import com.example.resources.Constants;
 
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.Permission;
 
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
-import net.dv8tion.jda.api.interactions.commands.DefaultMemberPermissions;
-import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.SlashCommandInteraction;
 
 
@@ -27,7 +23,7 @@ public class CowboysCommand extends ListenerAdapter{
 
         JDA jda = JDABuilder.createLight(Constants.token)
             .addEventListeners()
-            .setActivity(Activity.playing("Type /ping"))
+            .setActivity(Activity.playing("Type /Cowboys"))
             .build();
 
         jda.updateCommands().addCommands(
